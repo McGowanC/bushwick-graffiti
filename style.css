@@ -11,15 +11,15 @@ html {
       grid-template-rows: auto;
       grid-template-areas:
         "nav nav nav nav nav"
-        ". title title title  ."  
-        ". img-container img-container img-container .";
+        "title title title title title"  
+        "img-container img-container img-container img-container img-container";
   }
 
   nav {
       grid-area: nav;
       display: flex;
       justify-content: space-between;
-      background-image: linear-gradient(to right, red, yellow);
+      /*background-image: linear-gradient(to right, red, yellow);*/
     
 
   }
@@ -28,9 +28,9 @@ html {
       padding: 10px;
       text-decoration: none;
       font-family: 'Permanent Marker', cursive;
-      font-size:1.5em;
+      font-size:1.3em;
       font-weight:400;
-    color:black;
+      color:black;
 
   }
 
@@ -41,30 +41,91 @@ html {
 
   div.title h1 {
     font-family: 'Modak', cursive;
-    font-size: 120px;
+    font-size: 3.5em;
+    margin: 10px 0 0 10px;
     font-weight: 400;
-    margin:0;
-
+    width: 100%;
+    line-height: 1.2em;
   }
 
   div.title h2 {
-      margin-top: -30px;
+    margin: 0;
+    display: none;
   }
 
-
-
-  section.image-container {
+  ul.image-container {
       grid-area: img-container;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
+      list-style-type: none;
+      padding: 0;
   }
 
-  section.image-container img {
+ul.image-container li {
+  flex: 0 0 100%;
+}
 
-=
-      height: auto;
-      flex-grow: 0;
-      padding: 0 5px 20px 5px;
+ul.image-container li img {  
+      width:100%;
+  }
+
+  @media  (min-width: 550px) {
+
+    
+
+    ul.image-container li {
+      flex: 0 0 40%;
+      margin: 10px 10px 10px 10px;
+    }
+
+
+
+
+  }
+
+  @media (min-width: 850px) {
+    body{
+      grid-template-areas:
+        "nav nav nav nav nav"
+        "title title title title  title "  
+        "img-container img-container img-container img-container img-container";
+    }
+
+
+    ul.image-container li {
+      flex: 0 0 40%;
+    }
+
+    nav {
+      grid-area: nav;
+      display: flex;
+      justify-content: space-between;
+      /*background-image: linear-gradient(to right, red, yellow);*/     
+    
+
+  }
+
+
+
+  nav a {
+      padding: 10px;
+      text-decoration: none;
+      /*font-family: 'Permanent Marker', cursive;*/
+      font-size:1.5em;
+      font-weight:400;
+      color:black;
+
+  }
+
+  nav a:nth-child(2) {
+    font-size:1em;
+  }
+  
+  div.title h1 {
+    text-align: center ;
+    font-size: 6em;
+  }
+
   }
